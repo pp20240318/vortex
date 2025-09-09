@@ -1,0 +1,18 @@
+[2025-09-09 23:00:32] INFO: Vortex WebSocket 服务器在端口 3001 启动成功
+[2025-09-09 23:00:37] INFO: API请求: /api/common/settings?cid=democustomer&domain=localhost:3001&gameId=vortex -> api\common\settings.json
+[2025-09-09 23:00:37] INFO: API请求: /api/common/profile -> api\common\profile.json
+[2025-09-09 23:00:37] INFO: API请求: /api/common/tournaments/my?gameId=vortex -> api\common\tournaments\my.html
+[2025-09-09 23:00:37] INFO: API请求: /api/common/freebets/all?gameId=vortex -> api\common\freebets\all.html
+[2025-09-09 23:00:37] INFO: API请求: /api/common/limits?currency=usd -> api\common\limits.html
+[2025-09-09 23:00:37] INFO: API请求: /api/common/rates -> api\common\rates.html
+[2025-09-09 23:00:37] INFO: API请求: /api/games/settings -> api\games\settings.html
+[2025-09-09 23:00:37] INFO: API请求: /api/games/retrieve -> api\games\retrieve.html
+[2025-09-09 23:00:37] INFO: API请求: /api/translates/5fbba1ce8c2b9e7440670d3d/latest/en?v=689343388ac2a1fe8505a8be -> api\translates\5fbba1ce8c2b9e7440670d3d\latest\en.json
+[2025-09-09 23:00:50] INFO: API请求: /api/common/settings?cid=globonet&domain=localhost:3001&gameId=vortex -> api\common\settings.json
+[2025-09-09 23:00:50] INFO: API请求: /api/common/profile -> api\common\profile.json
+[2025-09-09 23:00:50] INFO: API请求: /api/games/retrieve -> api\games\retrieve.html
+[2025-09-09 23:00:50] INFO: API请求: /api/translates/5fbba1ce8c2b9e7440670d3d/latest/en?v=689343388ac2a1fe8505a8be -> api\translates\5fbba1ce8c2b9e7440670d3d\latest\en.json
+[2025-09-09 23:00:55] INFO: Vortex下注处理: 客户端=default, 下注=2, 符号=FIRE(火), 倍数=2.5, collection=[0,0,0] → [1,0,0]
+[2025-09-09 23:00:57] INFO: Vortex下注处理: 客户端=default, 下注=2, 符号=EARTH(土), 倍数=4.3, collection=[1,0,0] → [1,1,0]
+[2025-09-09 23:00:59] INFO: Vortex下注处理: 客户端=default, 下注=2, 符号=EARTH(土), 倍数=6.7, collection=[1,1,0] → [1,2,0]
+[2025-09-09 23:01:01] INFO: Vortex下注处理: 客户端=default, 下注=2, 符号=WIND(风), 倍数=6.7, collection=[1,2,0] → [1,2,0]
