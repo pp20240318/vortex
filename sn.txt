@@ -1,0 +1,7 @@
+/?cid=globonet&token=f804b1f63346cd31a91e650cf6b76022&locale=en
+
+pnpm install
+
+pnpm install mime-types
+
+node server.js

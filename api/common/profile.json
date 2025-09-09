@@ -1,0 +1,20 @@
+{
+    "id": "b83b2f3f-1ac9-4297-8d59-35afc62d6d95",
+    "playerName": "Residential Cougar",
+    "playerDiscriminator": "3380",
+    "sub": "democustomer@b83b2f3f-1ac9-4297-8d59-35afc62d6d95",
+    "isTest": true,
+    "balance": 989.4,
+    "currency": "usd",
+    "currencySign": "$",
+    "rounding": 2,
+    "externalToken": "f804b1f63346cd31a91e650cf6b76022",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjo0NDUsImlkIjoiYjgzYjJmM2YtMWFjOS00Mjk3LThkNTktMzVhZmM2MmQ2ZDk1IiwiZGlzcGxheU5hbWUiOiJSZXNpZGVudGlhbCBDb3VnYXIiLCJzdWIiOiJkZW1vY3VzdG9tZXJAYjgzYjJmM2YtMWFjOS00Mjk3LThkNTktMzVhZmM2MmQ2ZDk1IiwidG9rZW4iOiJmODA0YjFmNjMzNDZjZDMxYTkxZTY1MGNmNmI3NjAyMiIsImN1cnJlbmN5IjoidXNkIiwiaXNUZXN0Ijp0cnVlLCJjdXN0b21lclBsYXllcklkIjoiY2JhNGNiNGI2ZjA1YjFmOCIsInNpZCI6IjAxOTg4MjQ4LWRlMGItNzMwOS05ODk0LTdmNWMyZjYxNDc5ZiIsImlhdCI6MTc1NDUzMjg0OX0.D1MqArbE08bNOEa45aoZUxQu4S8CfNu8Mifq6d8GSTU",
+    "freebetsVerified": true,
+    "freebetsType": null,
+    "splitTest": null,
+    "country": "IN",
+    "sid": "01988248-de0b-7309-9894-7f5c2f61479f",
+    "storage": {},
+    "storiesNew": true
+}

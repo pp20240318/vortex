@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfederation_modules=self.webpackChunkfederation_modules||[]).push([[6238],{6238:(e,t,s)=>{s.r(t),s.d(t,{Context:()=>u._,ModuleSetting:()=>u.e});var u=s(390)}}]);

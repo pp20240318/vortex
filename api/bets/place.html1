@@ -1,0 +1,20 @@
+{
+  "hash": "6d017fa6fed73e1ee37a7243db29c413befdc9c6eecb79cfc5d7c47da1367682",
+  "state": {
+    "mask": "*033",
+    "multiplier": 26,
+    "bonusWin": 0,
+    "superBonus": false,
+    "collection": [
+      0,
+      3,
+      3
+    ],
+    "symbol": "Symbol2",
+    "cashable": true,
+    "closeable": true,
+    "initial": false
+  },
+  "roundId": "cd0125b4-0ac4-4d7e-9b27-8fce297a365b",
+  "freebetsId": null
+}

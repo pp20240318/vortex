@@ -1,0 +1,23 @@
+{
+  "coefficient": 17.55,
+  "result": "won",
+  "payout": 35.1,
+  "hash": "cb715f81a481b95a5c0454a1391b63ba6ac13926e047351f3c5f798e0443496b",
+  "rtp": 97,
+  "state": {
+    "mask": "*000",
+    "multiplier": 0,
+    "bonusWin": 0,
+    "superBonus": false,
+    "collection": [
+      0,
+      0,
+      0
+    ],
+    "symbol": "SymbolNeutral",
+    "cashable": false,
+    "closeable": false,
+    "initial": true
+  },
+  "roundId": "45258ea7-84f9-45d1-9b4b-a46cd858bef8"
+}

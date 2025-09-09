@@ -1,0 +1,1 @@
+(self.webpackChunkfederation_clients=self.webpackChunkfederation_clients||[]).push([["_4f7e","webpack_sharing_consume_default_pixi-spine_runtime-4_1_pixi-spine_runtime-4_1"],{"?4f7e":()=>{}}]);

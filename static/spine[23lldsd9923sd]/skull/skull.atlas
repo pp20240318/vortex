@@ -1,0 +1,14 @@
+skull.webp
+size:1053,250
+filter:Linear,Linear
+scull
+bounds:471,8,208,240
+shadow
+bounds:681,40,208,208
+skull-blur
+bounds:891,2,160,246
+offsets:5,7,170,260
+skull_bg
+bounds:2,8,240,240
+skull_obod
+bounds:244,23,225,225

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'LemonMilk'; /* Use the same name specified in the families array */
+  src: url('./LemonMilkbolditalic.ttf') format('truetype'); /* Specify the path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jooost'; /* Use the same name specified in the families array */
+  src: url('./Jost-ExtraBoldItalic.ttf') format('truetype'); /* Specify the path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}

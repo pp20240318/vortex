@@ -1,0 +1,146 @@
+{
+  "storeList": {
+    "game": "VortexCommon"
+  },
+  "balance": {
+    "mode": "default",
+    "delay": 1500
+  },
+  "defaultRtp": 97,
+  "gameServerId": "vortex",
+  "gameServerTheme": "vortex",
+  "gameCategory": "vortex",
+  "gameClient": "default",
+  "gameClientPublicUrl": "",
+  "gameRule": "vortex",
+  "winLevelList": [0, 10],
+  "winDuration": 2000,
+  "superBonusDuration": 10000,
+  "placebetHoldEnableTime": 5000,
+  "amountTooltipTimeout": 2000,
+  "defaultAmountId": 4,
+  "amountsMapValues": [1, 2, 3, 5, 10, 15, 20, 50, 100, 200, 500],
+  "defaultCoeffs": {
+    "Symbol1": [0, 1.55, 4.85, 10, 7],
+    "Symbol2": [0, 2.5, 7.7, 16, 27.5, 44, 20.5],
+    "Symbol3": [0, 3.9, 12.5, 28, 52, 85, 133, 200, 200]
+  },
+  "animationSpeedMultiplier": {
+    "normal": 1,
+    "fast": 0.5
+  },
+  "freebets": {
+    "enabled": true,
+    "completed": {
+      "delayOpen": 10,
+      "delayClose": 200
+    },
+    "minCoeffToCashout": 1.01
+  },
+  "guide": {
+    "guideVariant": "custom"
+  },
+  "game": {
+    "map": ["Symbol3", "Symbol2", "Symbol1", "SymbolNeutral", "SymbolLoss"],
+    "duration": 800,
+    "bonusSpinDuration": 750,
+    "timingFunction": "easeOutCubic",
+    "sliderSettings": {
+      "mapLength": 5
+    }
+  },
+  "button": {
+    "title": "COMMON.CASHOUT",
+    "enableSkip": false
+  },
+  "pageRender": {
+    "animationDelay": 1000,
+    "animationDuration": 2000
+  },
+  "quickMode": {
+    "accelerationDuration": 0.5,
+    "disableAutoOn": true,
+    "disableLS": true,
+    "alert": {
+      "requiredCountForAlert": 5,
+      "duration": 5000
+    }
+  },
+  "module": {
+    "moduleLayout": [
+      {
+        "id": "ModuleLayoutDiv",
+        "style": {
+          "background": "linear-gradient(180deg, rgba(34, 34, 34, 0.5) 0%, rgba(34, 34, 34, 0) 100%)"
+        }
+      },
+      {
+        "id": "LabelDemo"
+      },
+      {
+        "id": "LabelTournaments",
+        "groupClassName": "labels",
+        "group": 2
+      },
+      {
+        "id": "LabelFreebets",
+        "group": 2
+      },
+      {
+        "id": "ButtonSetting",
+        "group": 1,
+        "groupClassName": "headerBtns"
+      },
+      {
+        "id": "ButtonMusic",
+        "group": 1
+      },
+      {
+        "id": "ButtonQuickMode",
+        "group": 1
+      },
+      {
+        "id": "ButtonGuide",
+        "group": 1
+      },
+      {
+        "id": "GameBalance"
+      },
+      {
+        "id": "GameName",
+        "setting": {
+          "text": "Vortex"
+        }
+      },
+      {
+        "id": "GameTime"
+      }
+    ],
+    "moduleSetting": {
+      "timer": true,
+      "version": true,
+      "username": true,
+      "usernameReadonly": false,
+      "sound": true,
+      "music": true,
+      "animation": false,
+      "bigTimer": false,
+      "limit": true,
+      "quickMode": true,
+      "rules": true,
+      "fair": false,
+      "mybets": true,
+      "mybetsinfo": true,
+      "freebets": true,
+      "tournaments": true,
+      "turbouniverse": false,
+      "exit": true
+    },
+    "modulePageRender": {
+      "clientSeed": true,
+      "nonce": true,
+      "serverSeed": true,
+      "exState": true
+    }
+  }
+}
