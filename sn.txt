@@ -5,3 +5,5 @@ pnpm install
 pnpm install mime-types
 
 node server.js
+
+http://localhost:3001/?cid=globonet&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJ6Z2d0ZXN0X3VzZXIxMjM0OTkzNyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1lbWJlciIsImV4cCI6MTc1NjI5NjY3MSwiaXNzIjoiSXNzdWVyIiwiYXVkIjoiQXVkaWVuY2UifQ.z_GNPK04mpTy3s5z3Ap60bJCPaVgaX36LhJKy7UxquE&locale=en
