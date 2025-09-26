@@ -596,6 +596,8 @@ const VortexGameClass = (() => {
 
 // 创建全局游戏实例
 const gameInstances = new Map();
+//存放用户的Uid和余额
+const userBalanceMap = new Map();
 
 // 专门处理下注API的动态逻辑 - 使用JWT验证
 app.post('/api/bets/place', express.json(), async (req, res) => {
@@ -629,7 +631,10 @@ app.post('/api/bets/place', express.json(), async (req, res) => {
         //调用接口 返回
         const result = await sendPost(url, betModel);
         if (result.isOk) {
-            res.json(result.data);
+            //sendBalance
+            const { response, balance } = result.data;
+            await sendBalance(balance, userData.id)
+            res.json(response);
         } else {
             res.status(500).json({
                 error: 'Place bet failed',
@@ -650,7 +655,7 @@ app.post('/api/bets/place', express.json(), async (req, res) => {
 // 专门处理cashout API的动态逻辑 - 使用JWT验证
 app.post('/api/bets/cashout', express.json(), async (req, res) => {
     try {
-        const { roundId, gameId, amount, parameters } = req.body;
+        const { roundId } = req.body;
         // 从Authorization header获取JWT token
         const jwtToken = req.headers.authorization || req.headers.Authorization;
         if (!jwtToken) {
@@ -679,7 +684,13 @@ app.post('/api/bets/cashout', express.json(), async (req, res) => {
         //调用接口 返回
         const result = await sendPost(url, betModel);
         if (result.isOk) {
-            res.json(result.data);
+            const { response, addBalance } = result.data;
+            let balance = userBalanceMap.get(userData.id);
+            if (balance) {
+                balance = balance + addBalance;
+                await sendBalance(balance, userData.id)
+            }
+            res.json(response);
         } else {
             res.status(500).json({
                 error: 'Cashout failed',
@@ -1260,7 +1271,7 @@ async function verifyExternalToken(externalToken) {
                 error: null,
                 userData: {
                     displayName: "Residential Cougar",
-                    sub: "xxxxxdemocustomer@b83b2f3f-1ac9-4297-8d59-35afc62d6d95",
+                    sub: "customer@" + res.uid,
                     isTest: true,
                     currency: "usd",
                     currencySign: "$",
@@ -1371,10 +1382,9 @@ async function handleConnect(ws, message) {
         }
 
         const userData = verificationResult.decoded;
-
         // 存储客户端信息
         clients.set(ws, {
-            id: userData.uid,
+            id: userData.id,
             channels: new Set(),
             lastPing: Date.now(),
             userInfo: userData
@@ -1384,14 +1394,12 @@ async function handleConnect(ws, message) {
         ws.send(JSON.stringify({
             id,
             result: {
-                client: userData.uid,
+                client: userData.id,
                 version: "4.1.5"
             }
         }));
 
-        console.log("/////////////////////" + id, userData.uid);
-
-        console.log(`客户端连接成功: ${userData.uid}, 用户: ${userData.uid}`);
+        console.log(`客户端连接成功: ${userData.id}, 用户: ${userData.id}`);
     } catch (error) {
         logger.error(`handleConnect error: ${error}`);
         return;
@@ -1513,7 +1521,6 @@ wss.on('connection', (ws) => {
     ws.on('message', (data) => {
         try {
             const message = JSON.parse(data.toString());
-            console.log('data-------------' + data.toString());
             // 根据method路由到不同的处理函数
             if (message.params && message.params.token) {
                 // 连接请求
@@ -1673,6 +1680,31 @@ app.get('/push-balance/:channel', (req, res) => {
     });
 });
 
+function sendBalance(balance, uid) {
+    const targetChannel = `balance_ticket#customer@${uid}`;
+    const transactionId = require('crypto').randomUUID();
+
+    userBalanceMap.set(uid, balance);
+    const balanceMessage = {
+        result: {
+            channel: targetChannel,
+            data: {
+                data: [parseFloat(balance), transactionId, "user_balance_update"]
+            }
+        }
+    };
+    clients.forEach((client, ws) => {
+        if (ws.readyState === WebSocket.OPEN && client.channels && client.channels.has(targetChannel)) {
+            try {
+                ws.send(JSON.stringify(balanceMessage));
+                logger.info(`推送用户余额更新到xxxx ${targetChannel}: ${balance} (客户端: ${client.id})`);
+            } catch (error) {
+                logger.error(`推送余额消息失败xxx (客户端: ${client.id}): ${error.message}`);
+            }
+        }
+    });
+}
+
 // 查看当前连接和订阅状态
 app.get('/status', (req, res) => {
     const targetChannel = `balance_ticket#${FIXED_USER.account}@${FIXED_USER.id}`;
@@ -1709,7 +1741,7 @@ app.get('/status', (req, res) => {
 // 控制定时器的端点
 app.post('/timer/start', (req, res) => {
     if (!global.balanceTimerInterval) {
-        startBalanceTimer();
+        //startBalanceTimer();
         res.json({
             status: 'ok',
             message: '定时余额推送器已启动'
@@ -1789,7 +1821,7 @@ server.listen(PORT, '0.0.0.0', () => {
 
     // 启动定时余额推送器（可选）
     if (process.env.ENABLE_AUTO_BALANCE_TIMER === 'true') {
-        startBalanceTimer();
+        //startBalanceTimer();
         console.log('⏰ 定时余额推送器已启动（每5秒推送一次）');
     } else {
         console.log('⏰ 定时余额推送器已禁用');
@@ -1853,7 +1885,7 @@ if (require.main === module) {
 }
 
 /**
- * 启动定时余额推送器
+ * 启动定时余额推送器（弃用 不用这个方式，太消耗了）
  * 每5秒向指定订阅者推送余额消息
  */
 function startBalanceTimer() {
